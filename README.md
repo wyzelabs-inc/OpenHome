@@ -1,4 +1,13 @@
-# OpenHome eval
+<p align="center">
+  <img src="assets/openhome_logo.jpg" alt="OpenHome" width="600">
+</p>
+
+<p align="center">
+  <a href="https://huggingface.co/datasets/wyzelabs/OpenHome"><img src="https://img.shields.io/badge/Hugging%20Face-Dataset-FFD21E?logo=huggingface&logoColor=000" alt="Hugging Face dataset"></a>
+  <a href="http://arxiv.org/abs/2610.31986"><img src="https://img.shields.io/badge/arXiv-2610.31986-B31B1B?logo=arxiv&logoColor=white" alt="arXiv"></a>
+</p>
+
+# OpenHome
 
 Evaluation harness for [OpenHome](https://huggingface.co/datasets/wyzelabs/OpenHome): 2,254 four-option video QA questions on 1,118 smart-home camera clips, grouped into Perception, Reasoning and Insight.
 
