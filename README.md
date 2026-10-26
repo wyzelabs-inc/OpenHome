@@ -63,3 +63,17 @@ Each run writes to `results/<name>/`:
 | `generation`, `extra_body` | passed to the API call unchanged |
 | `server` | docker `engine`, `image`, `tp`, `port`, `args` for `serve.py` |
 | `concurrency`, `timeout`, `max_retries` | request handling |
+
+## Citation
+
+```bibtex
+@misc{wang2026openhomeperceptioninsightsmarthome,
+      title={OpenHome: From Perception to Insight in Smart-Home Camera Videos},
+      author={Xianglong Wang and Neil Rodrigues and Pei Guo and Yiru Fang and Kevin Beussman and Shuyang Wang and Jingzhi Wang and Liangju Li and Shunyao Xu and Zhongwei Cheng and Wei Li and Lin Chen},
+      year={2026},
+      eprint={2610.31986},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2610.31986},
+}
+```
