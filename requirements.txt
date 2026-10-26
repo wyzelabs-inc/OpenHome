@@ -1,0 +1,7 @@
+huggingface_hub>=0.24
+pyyaml
+tqdm
+openai>=1.40
+anthropic>=0.40
+imageio-ffmpeg   # ffmpeg binary, used when ffmpeg is not on PATH and FFMPEG is unset
+# vllm / sglang: install in the serving environment, not needed for eval.py

@@ -1,0 +1,22 @@
+name: muse_wonder_1_0
+backend: meta
+model: muse-wonder-1.0
+input: frames
+video_dir: videos_640
+frames:
+  fps: 1.0
+  min_frames: 4
+  max_frames: 64
+  max_pixels: 200000
+  jpeg_quality: 3
+instruction: You are shown frames sampled from a home-security camera clip, in order, each preceded by its timestamp. Answer
+  the multiple-choice question about the clip.
+image_detail: low
+answer: text
+generation:
+  temperature: 0
+  top_p: 1
+  max_output_tokens: 32000
+  reasoning:
+    effort: low
+concurrency: 8

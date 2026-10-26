@@ -1,0 +1,5 @@
+data/
+results/
+.venv/
+__pycache__/
+*.key

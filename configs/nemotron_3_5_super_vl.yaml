@@ -1,0 +1,32 @@
+name: nemotron_3_5_super_vl
+backend: vllm
+model: nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16
+input: video
+video_dir: videos_640
+video_url: file://{path}
+answer: logprobs
+generation:
+  temperature: 0
+extra_body:
+  chat_template_kwargs:
+    enable_thinking: false
+concurrency: 24
+server:
+  engine: vllm
+  image: vllm/vllm-openai:nightly-3f1bcfd82bb2e93fcd364fc7a5491718453a77e2
+  tp: 4
+  port: 8341
+  args:
+  - --trust-remote-code
+  - --gpu-memory-utilization
+  - '0.85'
+  - --max-num-seqs
+  - '32'
+  - --max-model-len
+  - '65536'
+  - --max-logprobs
+  - '20'
+  - --limit-mm-per-prompt
+  - '{"video": 1, "image": 1}'
+  - --media-io-kwargs
+  - '{"video": {"fps": 1.0, "num_frames": 64}}'

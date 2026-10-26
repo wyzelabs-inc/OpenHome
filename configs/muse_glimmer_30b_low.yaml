@@ -1,0 +1,36 @@
+name: muse_glimmer_30b_low
+backend: sglang
+model: meta-models/Muse-Glimmer-30B
+input: frames
+video_dir: videos_640
+frames:
+  fps: 1.0
+  min_frames: 4
+  max_frames: 64
+  max_pixels: 230400
+  jpeg_quality: 3
+answer: text
+generation:
+  temperature: 0
+  max_tokens: 4096
+extra_body:
+  chat_template_kwargs:
+    reasoning_strength: low
+  separate_reasoning: true
+concurrency: 16
+server:
+  engine: sglang
+  image: lmsysorg/sglang:latest
+  tp: 2
+  port: 8331
+  args:
+  - --context-length
+  - '32768'
+  - --mem-fraction-static
+  - '0.85'
+  - --trust-remote-code
+  - --enable-multimodal
+  - --mm-process-config
+  - '{"video":{"fps":1.0,"min_frames":4,"max_frames":64,"max_pixels":230400}}'
+  - --reasoning-parser
+  - muse

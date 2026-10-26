@@ -1,0 +1,12 @@
+name: gemini_3_8_flash
+backend: gemini
+model: gemini-3.8-flash
+input: video
+video_dir: videos_640
+answer: structured
+generation:
+  temperature: 0
+  seed: 38
+  thinkingConfig:
+    thinkingLevel: low
+concurrency: 8

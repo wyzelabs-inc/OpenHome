@@ -1,0 +1,38 @@
+name: mimo_v2_6_flash_rl
+backend: vllm
+model: XiaomiMiMo/MiMo-V2.6-Flash-RL
+input: video
+video_dir: videos_640
+video_url: file://{path}
+answer: logprobs
+generation:
+  temperature: 0
+extra_body:
+  chat_template_kwargs:
+    enable_thinking: false
+concurrency: 32
+server:
+  engine: vllm
+  image: vllm/vllm-openai:v0.31.0
+  tp: 2
+  port: 8321
+  args:
+  - --dtype
+  - bfloat16
+  - --max-model-len
+  - '20480'
+  - --gpu-memory-utilization
+  - '0.90'
+  - --max-num-seqs
+  - '64'
+  - --max-logprobs
+  - '20'
+  - --limit-mm-per-prompt
+  - '{"video":1}'
+  - --media-io-kwargs
+  - '{"video":{"fps":1.0,"num_frames":64}}'
+  - --mm-processor-kwargs
+  - '{"max_pixels":230400}'
+  - --trust-remote-code
+  - --hf-overrides
+  - '@mimo_hf_overrides.json'

@@ -1,0 +1,20 @@
+name: grok_4_7
+backend: xai
+model: grok-4.7
+input: frames
+video_dir: videos_640
+frames:
+  fps: 1.0
+  min_frames: 4
+  max_frames: 64
+  max_pixels: 200000
+  jpeg_quality: 3
+instruction: You are shown frames sampled from a home-security camera clip, in order, each preceded by its timestamp. Answer
+  the multiple-choice question about the clip.
+image_detail: low
+answer: structured
+generation:
+  reasoning_effort: minimal
+  temperature: 0
+  seed: 38
+concurrency: 8

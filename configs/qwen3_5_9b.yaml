@@ -1,0 +1,27 @@
+name: qwen3_5_9b
+backend: sglang
+model: Qwen/Qwen3.5-9B
+input: video
+video_dir: videos_640
+video_url: '{path}'
+answer: logprobs
+generation:
+  temperature: 0
+extra_body:
+  chat_template_kwargs:
+    enable_thinking: false
+concurrency: 32
+server:
+  engine: sglang
+  image: lmsysorg/sglang:latest
+  tp: 1
+  port: 8301
+  args:
+  - --context-length
+  - '32768'
+  - --mem-fraction-static
+  - '0.85'
+  - --trust-remote-code
+  - --enable-multimodal
+  - --mm-process-config
+  - '{"video":{"fps":1.0,"min_frames":4,"max_frames":64,"max_pixels":230400}}'

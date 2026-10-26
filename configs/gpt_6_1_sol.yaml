@@ -1,0 +1,19 @@
+name: gpt_6_1_sol
+backend: openai
+model: gpt-6.1-sol
+input: frames
+video_dir: videos_640
+frames:
+  fps: 1.0
+  min_frames: 4
+  max_frames: 64
+  max_pixels: 200000
+  jpeg_quality: 3
+instruction: You are shown frames sampled from a home-security camera clip, in order, each preceded by its timestamp. Answer
+  the multiple-choice question about the clip.
+image_detail: low
+answer: structured
+generation:
+  reasoning_effort: low
+  seed: 38
+concurrency: 8
