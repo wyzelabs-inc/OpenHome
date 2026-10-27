@@ -10,7 +10,7 @@
 
 # OpenHome
 
-Evaluation harness for [OpenHome](https://huggingface.co/datasets/wyzelabs/OpenHome): 2,254 four-option video QA questions on 1,118 smart-home camera clips, grouped into Perception, Reasoning and Insight.
+Evaluation harness for [OpenHome](https://huggingface.co/datasets/wyzelabs/OpenHome): 2,254 four-option video QA questions on 1,118 smart-home camera clips, grouped into Perception, Reasoning and Insight. The benchmark is described in the paper [OpenHome: From Perception to Insight in Smart-Home Camera Videos](https://arxiv.org/abs/2610.31986).
 
 There is one config per model in `configs/`. API models (OpenAI, Gemini, xAI, Meta, Anthropic) are called directly. Open models run on vLLM or SGLang, started in docker by `serve.py`.
 
